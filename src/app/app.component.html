@@ -1,24 +1,38 @@
 <div clas="center-content">
   <mat-card class="example-card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-subtitle>Financeiro</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <mat-tab-group mat-align-tabs="start">
         <mat-tab label="Login">
           <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
-            <input type="email" matInput placeholder="Email" value="">
+            <input type="email" matInput placeholder="Email" value="" [(ngModel)]="log_email">
           </mat-form-field>
           <mat-form-field class="example-full-width">
             <mat-label>Senha</mat-label>
-            <input type="password" matInput placeholder="senha">
+            <input type="password" matInput placeholder="senha" [(ngModel)]="log_password">
           </mat-form-field>
-          <button class="mat-raised" mat-button color="primary">Login</button>
+          <button mat-button color="primary" (click)="login()">Login</button>
         </mat-tab>
         <mat-tab label="Register">
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Email" value="" [(ngModel)]="register_email">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput placeholder="senha" [(ngModel)]="register_password">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Confirme senha</mat-label>
+            <input type="password" matInput placeholder="senha" [(ngModel)]="confirm_password">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+          <button mat-button color="primary" (click)="login()">Register</button>
         </mat-tab>
       </mat-tab-group>
     </mat-card-content>
